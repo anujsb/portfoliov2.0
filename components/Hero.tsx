@@ -10,10 +10,10 @@ const Hero = () => {
   ];
 
   return (
-    <div className="flex px-4 md:mt-20 p-4 md:p-16 lg:p-24">
+    <div className="flex px-4 mt-26 md:mt-52 my-52 items-center justify-between">
       <h1 className="text-3xl md:text-5xl lg:text-8xl font-semibold leading-snug md:leading-tight lg:leading-none">
         Your Go-To Expert <br />
-        for <FlipWords words={words} /> <br />
+        for <FlipWords className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500" words={words} /> <br />
       </h1>
     </div>
   );

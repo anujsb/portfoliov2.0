@@ -57,7 +57,7 @@ export const FloatingNav = ({
             duration: 0.2,
           }}
           className={cn(
-            "flex justify-between items-center w-min md:w-full max-w-screen-xl fixed top-5 md:top-10 border border-transparent rounded-2xl bg-sec-col shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] py-2 px-3",
+            "flex justify-between items-center w-min md:w-full max-w-screen-xl fixed top-5 md:top-10 border border-transparent rounded-2xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] py-2 px-3",
             className
           )}
         >
@@ -73,7 +73,7 @@ export const FloatingNav = ({
               Anuj  Bhuyar
             </h1>
           </div>
-          <div className="flex space-x-1 md:space-x-4 text-[#404040] hover:text-black mx-4">
+          <div className="flex space-x-1 md:space-x-4  mx-4">
             {navItems.map((navItem, idx) => (
               <Link
                 key={`link=${idx}`}
