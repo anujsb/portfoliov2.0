@@ -52,9 +52,8 @@ const Hero = () => {
       >
         <div>
           <video
-            src="bg.mp4"
+            src="bg-port.mov"
             autoPlay
-            loop
             muted
             className="absolute left-0 top-0 size-full object-cover object-center"
             // onLoadedData={handleVideoLoad}
@@ -62,15 +61,15 @@ const Hero = () => {
 
           {/* <BackgroundGradientAnimation className="absolute left-0 top-0 size-full object-cover object-center" /> //need to work on it */}
         </div>
-        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75 text-8xl text-black">
+        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75 text-8xl text-white">
           Developer
         </h1>
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10 ">
-            <h1 className="special-font hero-heading text-black text-8xl">
+            <h1 className="special-font hero-heading text-white text-8xl">
               Full Stack
             </h1>
-            <p className="mb-5 max-w-64 font-robert-regular text-black text-4xl font-sans">
+            <p className="mb-5 max-w-64 font-robert-regular text-white text-4xl font-sans">
               Hi,
               <br /> Im Anuj Bhuyar
             </p>
