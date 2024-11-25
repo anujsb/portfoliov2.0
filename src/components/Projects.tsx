@@ -1,11 +1,22 @@
-import { useState, useRef } from "react";
+"use client";
+
+import { useState, useRef, ReactNode, MouseEvent } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 
-export const BentoTilt = ({ children, className = "" }) => {
-  const [transformStyle, setTransformStyle] = useState("");
-  const itemRef = useRef(null);
+// Define the BentoTilt component
+interface BentoTiltProps {
+  children: ReactNode;
+  className?: string;
+}
 
-  const handleMouseMove = (event) => {
+export const BentoTilt: React.FC<BentoTiltProps> = ({
+  children,
+  className = "",
+}) => {
+  const [transformStyle, setTransformStyle] = useState<string>("");
+  const itemRef = useRef<HTMLDivElement | null>(null);
+
+  const handleMouseMove = (event: MouseEvent) => {
     if (!itemRef.current) return;
 
     const { left, top, width, height } =
@@ -38,12 +49,28 @@ export const BentoTilt = ({ children, className = "" }) => {
   );
 };
 
-export const BentoCard = ({ src, title, description, isComingSoon }) => {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [hoverOpacity, setHoverOpacity] = useState(0);
-  const hoverButtonRef = useRef(null);
+// Define BentoCard component props
+interface BentoCardProps {
+  src: string;
+  title: ReactNode;
+  description?: string;
+  link?: string; // Added link prop
+}
 
-  const handleMouseMove = (event) => {
+export const BentoCard: React.FC<BentoCardProps> = ({
+  src,
+  title,
+  description,
+  link,
+}) => {
+  const [cursorPosition, setCursorPosition] = useState<{
+    x: number;
+    y: number;
+  }>({ x: 0, y: 0 });
+  const [hoverOpacity, setHoverOpacity] = useState<number>(0);
+  const hoverButtonRef = useRef<HTMLDivElement | null>(null);
+
+  const handleMouseMove = (event: MouseEvent) => {
     if (!hoverButtonRef.current) return;
     const rect = hoverButtonRef.current.getBoundingClientRect();
 
@@ -73,8 +100,11 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
           )}
         </div>
 
-        {isComingSoon && (
-          <div
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
             ref={hoverButtonRef}
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
@@ -90,38 +120,29 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
               }}
             />
             <TiLocationArrow className="relative z-20" />
-            <p className="relative z-20">coming soon</p>
-          </div>
+            <p className="relative z-20">View Project</p>
+          </a>
         )}
       </div>
     </div>
   );
 };
 
-const Projects = () => (
+// Define the Projects component
+const Projects: React.FC = () => (
   <section className="bg-black pb-52">
     <div className="container mx-auto px-3 md:px-10">
       <div className="px-5 py-32">
-        <p className="font-circular-web text-lg text-blue-50">
-          Into the Metagame Layer
-        </p>
-        <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-          Immerse yourself in a rich and ever-expanding universe where a vibrant
-          array of products converge into an interconnected overlay experience
-          on your world.
-        </p>
+        <p className="font-circular-web text-lg text-blue-50">Projects</p>
+        <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50"></p>
       </div>
 
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
           src="videos/feature-1.mp4"
-          title={
-            <>
-              radia<b>n</b>t
-            </>
-          }
-          description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
-          isComingSoon
+          title={<>AI Form Builder</>}
+          description="AI-powered form builder with question generation, feedback categorization, and real-time insights."
+          link="https://aiforms.21bubbles.com/"
         />
       </BentoTilt>
 
@@ -129,59 +150,45 @@ const Projects = () => (
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
           <BentoCard
             src="videos/feature-2.mp4"
-            title={
-              <>
-                zig<b>m</b>a
-              </>
-            }
-            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
-            isComingSoon
+            title={<>21Bubbles</>}
+            description="Software development agency offering efficient MVP development, focusing on customer-centric solutions."
+            link="https://21bubbles.com"
           />
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
           <BentoCard
             src="videos/feature-3.mp4"
-            title={
-              <>
-                n<b>e</b>xus
-              </>
-            }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
-            isComingSoon
+            title={<>Brotein Bistro</>}
+            description="SaaS platform for cafe subscriptions with meal tracking, user plans, and admin dashboard."
+            link="https://broteinbistro.com/"
           />
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
           <BentoCard
             src="videos/feature-4.mp4"
-            title={
-              <>
-                az<b>u</b>l
-              </>
-            }
-            description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
-            isComingSoon
+            title={<>DigiPalettee</>}
+            description="A platform designed to create interactive, engaging digital content for businesses."
+            link="https://www.digipalettes.com/"
           />
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_2">
-          <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
-            <h1 className="bento-title special-font max-w-64 text-black">
-              M<b>o</b>re co<b>m</b>ing s<b>o</b>on.
-            </h1>
-
-            <TiLocationArrow className="m-5 scale-[5] self-end" />
-          </div>
+        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+          <BentoCard
+            src="videos/feature-4.mp4"
+            title={<>AI Tools List</>}
+            description="Self-curated platform showcasing a collection of AI tools."
+            link="https://aitools.21bubbles.com"
+          />
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_2">
-          <video
-            src="videos/feature-5.mp4"
-            loop
-            muted
-            autoPlay
-            className="size-full object-cover object-center"
+        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+          <BentoCard
+            src=""
+            title={<>Nyaysutra</>}
+            description="SIH landing page built to represent solutions for judicial efficiency."
+            link="https://nyaysutra.netlify.app"
           />
         </BentoTilt>
       </div>
