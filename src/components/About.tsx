@@ -8,7 +8,14 @@ const About = () => {
           <div className="absolute hidden lg:block right-0 top-32 w-64 h-64 lg:w-96 lg:h-96">
             <div className="w-full h-full border-r-[3px] border-neutral-400 rounded-br-[500px]" />
           </div>
-          <div className="m-4 md:m-10">about u</div>
+          <div className="mb-8 w-2/3">
+            I’m Anuj Bhuyar, a full-stack developer passionate about
+            building innovative, user-focused web applications. With expertise
+            in React, Next.js, Tailwind CSS, and Node.js, I craft seamless
+            frontends and powerful backends. I’m always exploring new
+            technologies and integrating AI solutions to create smarter, more
+            intuitive experiences. Let’s build something amazing!
+          </div>
 
           <div className="space-y-12 md:space-y-16">
             <div className="space-y-4">
