@@ -213,7 +213,7 @@ export const BentoTilt: React.FC<BentoTiltProps> = ({
   className = "",
 }) => {
   const [transformStyle, setTransformStyle] = useState<string>("");
-  const itemRef = useRef<HTMLAnchorElement | null>(null);
+  const itemRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseMove = (event: MouseEvent) => {
     if (!itemRef.current) return;
@@ -256,18 +256,87 @@ interface BentoCardProps {
   link?: string;
 }
 
+// export const BentoCard: React.FC<BentoCardProps> = ({
+//   src,
+//   title,
+//   description,
+//   link,
+// }) => {
+//   const [cursorPosition, setCursorPosition] = useState<{
+//     x: number;
+//     y: number;
+//   }>({ x: 0, y: 0 });
+//   const [hoverOpacity, setHoverOpacity] = useState<number>(0);
+//   const hoverButtonRef = useRef<HTMLAnchorElement | null>(null);
+
+//   const handleMouseMove = (event: MouseEvent) => {
+//     if (!hoverButtonRef.current) return;
+//     const rect = hoverButtonRef.current.getBoundingClientRect();
+
+//     setCursorPosition({
+//       x: event.clientX - rect.left,
+//       y: event.clientY - rect.top,
+//     });
+//   };
+
+//   const handleMouseEnter = () => setHoverOpacity(1);
+//   const handleMouseLeave = () => setHoverOpacity(0);
+
+//   return (
+//     <div className="relative size-full">
+//       <img
+//         src={src}
+//         alt={typeof title === "string" ? title : "Project Image"}
+//         className="absolute left-0 top-0 size-full object-cover object-center rounded-lg border border-neutral-600"
+//       />
+//       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
+//         <div>
+//           <h1 className="bento-title special-font">{title}</h1>
+//           {description && (
+//             <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
+//           )}
+//         </div>
+
+//         {link && (
+//           <a
+//             href={link}
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             ref={hoverButtonRef}
+//             onMouseMove={handleMouseMove}
+//             onMouseEnter={handleMouseEnter}
+//             onMouseLeave={handleMouseLeave}
+//             className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/50"
+//           >
+//             {/* Radial gradient hover effect */}
+//             <div
+//               className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+//               style={{
+//                 opacity: hoverOpacity,
+//                 background: `radial-gradient(100px circle at ${cursorPosition.x}px ${cursorPosition.y}px, #656fe288, #00000026)`,
+//               }}
+//             />
+//             <TiLocationArrow className="relative z-20" />
+//             <p className="relative z-20">View Project</p>
+//           </a>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
 export const BentoCard: React.FC<BentoCardProps> = ({
   src,
   title,
   description,
   link,
 }) => {
-  const [cursorPosition, setCursorPosition] = useState<{
-    x: number;
-    y: number;
-  }>({ x: 0, y: 0 });
+  const [cursorPosition, setCursorPosition] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
   const [hoverOpacity, setHoverOpacity] = useState<number>(0);
-  const hoverButtonRef = useRef<HTMLAnchorElement | null>(null);
+  const hoverButtonRef = useRef<HTMLAnchorElement | null>(null); // Updated type
 
   const handleMouseMove = (event: MouseEvent) => {
     if (!hoverButtonRef.current) return;
@@ -287,7 +356,7 @@ export const BentoCard: React.FC<BentoCardProps> = ({
       <img
         src={src}
         alt={typeof title === "string" ? title : "Project Image"}
-        className="absolute left-0 top-0 size-full object-cover object-center rounded-lg border border-neutral-600"
+        className="absolute left-0 top-0 size-full object-cover object-center"
       />
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
         <div>
@@ -302,11 +371,11 @@ export const BentoCard: React.FC<BentoCardProps> = ({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            ref={hoverButtonRef}
+            ref={hoverButtonRef} // Corrected ref type
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/50"
+            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/20"
           >
             {/* Radial gradient hover effect */}
             <div
@@ -324,6 +393,7 @@ export const BentoCard: React.FC<BentoCardProps> = ({
     </div>
   );
 };
+
 
 const Projects: React.FC = () => (
   <section id="projects" className="bg-black pb-52">
