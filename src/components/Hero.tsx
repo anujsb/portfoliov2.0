@@ -87,7 +87,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-white text-6xl md:text-8xl lg:text-8xl">
+      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black text-6xl md:text-8xl lg:text-8xl">
         Developer
       </h1>
     </div>

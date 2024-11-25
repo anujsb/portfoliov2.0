@@ -403,8 +403,18 @@ const Projects: React.FC = () => (
   <section id="projects" className="bg-black pb-52">
     <div className="container mx-auto px-3 md:px-10">
       <div className="px-5 py-32">
-        <p className="font-circular-web text-6xl text-blue-50">Projects</p>
-        <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50"></p>
+        <div className="space-y-4">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white uppercase">
+            projects
+          </h2>
+          <div className="space-y-2">
+            <div className="flex gap-2">
+              <div className="w-2 h-2 rounded-full bg-white" />
+              <div className="w-2 h-2 rounded-full bg-white" />
+              <div className="w-2 h-2 rounded-full bg-white" />
+            </div>
+          </div>
+        </div>
       </div>
 
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh] transition-transform duration-300 ease-out">
