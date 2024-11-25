@@ -356,13 +356,13 @@ export const BentoCard: React.FC<BentoCardProps> = ({
       <img
         src={src}
         alt={typeof title === "string" ? title : "Project Image"}
-        className="absolute left-0 top-0 size-full object-cover object-center"
+        className="absolute left-0 top-0 size-full object-cover object-center opacity-50"
       />
-      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
-        <div>
-          <h1 className="bento-title special-font">{title}</h1>
+      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-white ">
+        <div className="">
+          <h1 className="bento-title special-font text-3xl">{title}</h1>
           {description && (
-            <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
+            <p className="mt-3 max-w-64 text-xs md:text-base text-neutral-400">{description}</p>
           )}
         </div>
 
