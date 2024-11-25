@@ -6,7 +6,7 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative min-h-screen w-screen overflow-x-hidden">
       <Hero />
       {/* <About /> */}
       <Projects />
