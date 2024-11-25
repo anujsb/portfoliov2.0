@@ -331,7 +331,10 @@ export const BentoCard: React.FC<BentoCardProps> = ({
   description,
   link,
 }) => {
-  const [cursorPosition, setCursorPosition] = useState<{ x: number; y: number }>({
+  const [cursorPosition, setCursorPosition] = useState<{
+    x: number;
+    y: number;
+  }>({
     x: 0,
     y: 0,
   });
@@ -362,7 +365,9 @@ export const BentoCard: React.FC<BentoCardProps> = ({
         <div className="">
           <h1 className="bento-title special-font text-3xl">{title}</h1>
           {description && (
-            <p className="mt-3 max-w-64 text-xs md:text-base text-neutral-400">{description}</p>
+            <p className="mt-3 max-w-64 text-xs md:text-base text-neutral-400">
+              {description}
+            </p>
           )}
         </div>
 
@@ -393,7 +398,6 @@ export const BentoCard: React.FC<BentoCardProps> = ({
     </div>
   );
 };
-
 
 const Projects: React.FC = () => (
   <section id="projects" className="bg-black pb-52">

@@ -61,7 +61,7 @@ const Hero = () => {
 
           {/* <BackgroundGradientAnimation className="absolute left-0 top-0 size-full object-cover object-center" /> //need to work on it */}
         </div>
-        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75 text-8xl text-white">
+        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75 text-6xl md:text-8xl lg:text-8xl text-white">
           Developer
         </h1>
         <div className="absolute left-0 top-0 z-40 size-full">
@@ -87,7 +87,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-white text-8xl">
+      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-white text-6xl md:text-8xl lg:text-8xl">
         Developer
       </h1>
     </div>
