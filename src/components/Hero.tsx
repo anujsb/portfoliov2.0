@@ -52,7 +52,7 @@ const Hero = () => {
       >
         <div>
           <video
-            src="bg-port.mov"
+            src="https://res.cloudinary.com/dn0ws0os3/video/upload/locdp7ixf6nhiudaoayo.mp4"
             autoPlay
             muted
             className="absolute left-0 top-0 size-full object-cover object-center"
