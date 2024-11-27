@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef } from 'react';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import React, { useRef } from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 
 interface MenuItemProps {
@@ -32,7 +32,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, color, badges }) => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
       className="relative group cursor-pointer"
       onMouseMove={handleMouseMove}
@@ -40,13 +40,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, color, badges }) => {
       style={{
         rotateX,
         rotateY,
-        transformStyle: 'preserve-3d',
+        transformStyle: "preserve-3d",
       }}
     >
-      <div 
-        className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      >
-        <motion.div 
+      <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <motion.div
           className={`absolute w-[280px] h-[400px] -top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${color} flex items-center justify-center p-4`}
           style={{
             transformPerspective: 1000,
@@ -62,10 +60,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, color, badges }) => {
         </motion.div>
       </div>
 
-      <motion.span 
+      <motion.span
         className="block text-5xl py-4 group-hover:text-opacity-25 transition-all duration-300"
         style={{
-          transform: 'translateZ(50px)',
+          transform: "translateZ(50px)",
         }}
       >
         {name}
@@ -76,25 +74,40 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, color, badges }) => {
 
 const Menu: React.FC = () => {
   const menuItems: MenuItemProps[] = [
-    { 
-      name: 'Front-End', 
-      color: 'bg-red-500/50', 
-      badges: ['React', 'Next.js', 'Redux', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript'] 
+    {
+      name: "Front-End",
+      color: "bg-red-500/50",
+      badges: [
+        "React",
+        "Next.js",
+        "Redux",
+        "Tailwind CSS",
+        "HTML",
+        "CSS",
+        "JavaScript",
+      ],
     },
-    { 
-      name: 'Back-End', 
-      color: 'bg-blue-500/50', 
-      badges: ['Node.js', 'MongoDB', 'Prisma', 'RESTful APIs', 'MySQL', 'Express'] 
+    {
+      name: "Back-End",
+      color: "bg-blue-500/50",
+      badges: [
+        "Node.js",
+        "MongoDB",
+        "Prisma",
+        "RESTful APIs",
+        "MySQL",
+        "Express",
+      ],
     },
-    { 
-      name: 'Tools and Languages', 
-      color: 'bg-green-500/50', 
-      badges: ['JavaScript', ' C++', 'Java', 'Python', 'Git', 'PyCharm'] 
+    {
+      name: "Tools and Languages",
+      color: "bg-green-500/50",
+      badges: ["JavaScript", " C++", "Java", "Python", "Git", "PyCharm"],
     },
-    { 
-      name: 'Specialized Domains', 
-      color: 'bg-purple-500/70', 
-      badges: ['a', 'xy', 'zs', 'Lizzy', 'Taylor', 'Taylor', 'Taylor', 'Taylor'] 
+    {
+      name: "Specialized Domains",
+      color: "bg-purple-500/70",
+      badges: ["NLP", "LLM", "SaaS", "Machine Learning"],
     },
   ];
 
