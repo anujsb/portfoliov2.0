@@ -1,4 +1,5 @@
 import React from "react";
+import Menu from "./MenuItem";
 
 const About = () => {
   return (
@@ -9,12 +10,12 @@ const About = () => {
             <div className="w-full h-full border-r-[3px] border-neutral-400 rounded-br-[500px]" />
           </div>
           <div className="mb-8 w-2/3">
-            I’m Anuj Bhuyar, a full-stack developer passionate about
-            building innovative, user-focused web applications. With expertise
-            in React, Next.js, Tailwind CSS, and Node.js, I craft seamless
-            frontends and powerful backends. I’m always exploring new
-            technologies and integrating AI solutions to create smarter, more
-            intuitive experiences. Let’s build something amazing!
+            I’m Anuj Bhuyar, a full-stack developer passionate about building
+            innovative, user-focused web applications. With expertise in React,
+            Next.js, Tailwind CSS, and Node.js, I craft seamless frontends and
+            powerful backends. I’m always exploring new technologies and
+            integrating AI solutions to create smarter, more intuitive
+            experiences. Let’s build something amazing!
           </div>
 
           <div className="space-y-12 md:space-y-16">
@@ -32,8 +33,7 @@ const About = () => {
             </div>
 
             <div className="space-y-8">
-              {/* Core Skills */}
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h3 className="text-xl md:text-2xl text-neutral-700">Core</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {["HTML", "CSS", "JS"].map((skill) => (
@@ -48,7 +48,7 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Libraries & Frameworks */}
+
               <div className="space-y-4">
                 <h3 className="text-xl md:text-2xl text-neutral-700">
                   Libraries & Frameworks
@@ -66,7 +66,7 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Tools & Platforms */}
+
               <div className="space-y-4">
                 <h3 className="text-xl md:text-2xl text-neutral-700">
                   Tools & Platforms
@@ -82,7 +82,9 @@ const About = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
+
+              <Menu />
             </div>
           </div>
         </section>
