@@ -45,7 +45,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, color, badges }) => {
     >
       <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <motion.div
-          className={`absolute w-[280px] h-[400px] -top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${color} flex items-center justify-center p-4`}
+          className={`absolute w-[280px] h-[200px] -top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${color} flex items-center justify-center p-4 rounded-lg shadow-md`}
           style={{
             transformPerspective: 1000,
           }}
@@ -112,8 +112,8 @@ const Menu: React.FC = () => {
   ];
 
   return (
-    <div className=" flex">
-      <nav className="flex flex-col space-x-8">
+    <div className="w-full">
+      <nav className="flex flex-col space-x-8 w-full">
         {menuItems.map((item, index) => (
           <MenuItem key={index} {...item} />
         ))}
